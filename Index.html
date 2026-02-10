@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperSport Bikes - Dein Premium Motorrad Händler</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ff4444;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #ff4444;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 68, 68, 0.2)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="%23ff4444" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="1200" height="400" fill="%231a1a1a"/><rect width="1200" height="400" fill="url(%23grid)"/></svg>');
+            background-attachment: fixed;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            color: #ff4444;
+        }
+
+        .hero-content p {
+            font-size: 24px;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-content button {
+            background: #ff4444;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-content button:hover {
+            background: #cc0000;
+            transform: scale(1.05);
+        }
+
+        /* Motorräder Section */
+        .motorcycles {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 50px;
+            color: #ff4444;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .motorcycle-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .motorcycle-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid #ff4444;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .motorcycle-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(255, 68, 68, 0.3);
+        }
+
+        .motorcycle-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background: #333;
+        }
+
+        .motorcycle-info {
+            padding: 20px;
+        }
+
+        .motorcycle-info h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #ff4444;
+        }
+
+        .motorcycle-info p {
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .price-tag {
+            display: inline-block;
+            background: #ff4444;
+            color: black;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .btn-info {
+            background: #ff4444;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+            font-weight: bold;
+        }
+
+        .btn-info:hover {
+            background: #cc0000;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.95);
+            color: #888;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 2px solid #ff4444;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            margin: 20px 0;
+            font-size: 14px;
+        }
+
+        .contact-info a {
+            color: #ff4444;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .hero-content p {
+                font-size: 18px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .motorcycle-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <div class="logo">🏍️ SuperSport Bikes</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#motorradе">Motorräder</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero" id="home">
+        <div class="hero-content">
+            <h1>Erlebe Pure Performance</h1>
+            <p>Die schnellsten & besten Supersportler der Welt</p>
+            <button onclick="document.getElementById('motorradе').scrollIntoView({behavior: 'smooth'})">
+                Jetzt Entdecken
+            </button>
+        </div>
+    </div>
+
+    <!-- Motorräder Section -->
+    <section class="motorcycles" id="motorradе">
+        <h2 class="section-title">Unsere Premium Kollection</h2>
+        
+        <div class="motorcycle-grid">
+            <!-- Ducati Panigale V4S -->
+            <div class="motorcycle-card">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=400&fit=crop" alt="Ducati Panigale V4S" class="motorcycle-image">
+                <div class="motorcycle-info">
+                    <h3>Ducati Panigale V4S</h3>
+                    <p>Mit 226 PS und Ducati-Elektronik ist die Panigale V4S die perfekte Rennstrecken-Superbike.</p>
+                    <div class="price-tag">ab CHF 26.990</div>
+                    <button class="btn-info">Mehr Infos</button>
+                </div>
+            </div>
+
+            <!-- BMW M1000R -->
+            <div class="motorcycle-card">
+                <img src="https://images.unsplash.com/photo-1547019622-a48c1b3feb7a?w=500&h=400&fit=crop" alt="BMW M1000R" class="motorcycle-image">
+                <div class="motorcycle-info">
+                    <h3>BMW M1000R</h3>
+                    <p>Die legendäre BMW mit 209 PS für ultimative Rennstrecken-Performance.</p>
+                    <div class="price-tag">ab CHF 20.990</div>
+                    <button class="btn-info">Mehr Infos</button>
+                </div>
+            </div>
+
+            <!-- BMW S1000R -->
+            <div class="motorcycle-card">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=400&fit=crop" alt="BMW S1000R" class="motorcycle-image">
+                <div class="motorcycle-info">
+                    <h3>BMW S1000R</h3>
+                    <p>Aggressive Optik trifft auf 207 PS Power und Premium-Elektronik.</p>
+                    <div class="price-tag">ab CHF 18.990</div>
+                    <button class="btn-info">Mehr Infos</button>
+                </div>
+            </div>
+
+            <!-- Kawasaki Ninja H2 -->
+            <div class="motorcycle-card">
+                <img src="https://images.unsplash.com/photo-1547019622-a48c1b3feb7a?w=500&h=400&fit=crop" alt="Kawasaki Ninja H2" class="motorcycle-image">
+                <div class="motorcycle-info">
+                    <h3>Kawasaki Ninja H2</h3>
+                    <p>Mit Kompressor und 231 PS - Kawasaki's stärkste Hypersportler.</p>
+                    <div class="price-tag">ab CHF 23.990</div>
+                    <button class="btn-info">Mehr Infos</button>
+                </div>
+            </div>
+
+            <!-- Kawasaki Ninja H2R -->
+            <div class="motorcycle-card">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=400&fit=crop" alt="Kawasaki Ninja H2R" class="motorcycle-image">
+                <div class="motorcycle-info">
+                    <h3>Kawasaki Ninja H2R</h3>
+                    <p>Die extreme H2R mit 326 PS - nur für die Rennstrecke! Pure Rennmaschine.</p>
+                    <div class="price-tag">ab CHF 27.990</div>
+                    <button class="btn-info">Mehr Infos</button>
+                </div>
+            </div>
+
+            <!-- Yamaha R1 -->
+            <div class="motorcycle-card">
+                <img src="https://images.unsplash.com/photo-1547019622-a48c1b3feb7a?w=500&h=400&fit=crop" alt="Yamaha R1" class="motorcycle-image">
+                <div class="motorcycle-info">
+                    <h3>Yamaha R1</h3>
+                    <p>Legendäre Supersportler mit 200 PS und Crossplane-Motor-Technologie.</p>
+                    <div class="price-tag">ab CHF 17.990</div>
+                    <button class="btn-info">Mehr Infos</button>
+                </div>
+            </div>
+
+            <!-- Yamaha R1M -->
+            <div class="motorcycle-card">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=400&fit=crop" alt="Yamaha R1M" class="motorcycle-image">
+                <div class="motorcycle-info">
+                    <h3>Yamaha R1M</h3>
+                    <p>Die R1M mit elektronischem Fahrwerk und Specials-Package.</p>
+                    <div class="price-tag">ab CHF 21.990</div>
+                    <button class="btn-info">Mehr Infos</button>
+                </div>
+            </div>
+
+            <!-- Honda CBR1000R-RR -->
+            <div class="motorcycle-card">
+                <img src="https://images.unsplash.com/photo-1547019622-a48c1b3feb7a?w=500&h=400&fit=crop" alt="Honda CBR1000R-RR" class="motorcycle-image">
+                <div class="motorcycle-info">
+                    <h3>Honda CBR1000R-RR</h3>
+                    <p>Die CBR ist zurück! Mit 215 PS und stärkster Traktionskontrolle.</p>
+                    <div class="price-tag">ab CHF 19.990</div>
+                    <button class="btn-info">Mehr Infos</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="kontakt">
+        <h3 style="color: #ff4444; margin-bottom: 20px;">Kontaktiere Uns</h3>
+        <div class="contact-info">
+            <p>📍 Deine Adresse, Stadt | Schweiz</p>
+            <p>📞 Tel: <a href="tel:+41XXXXXXX">+41 XX XXX XX XX</a></p>
+            <p>📧 Email: <a href="mailto:info@supersportbikes.ch">info@supersportbikes.ch</a></p>
+            <p>🕒 Mo-Fr: 09:00 - 18:00 | Sa: 10:00 - 16:00</p>
+        </div>
+        <hr style="border: 1px solid #444; margin: 20px 0;">
+        <p>&copy; 2026 SuperSport Bikes. Alle Rechte vorbehalten.</p>
+    </footer>
+</body>
+</html>
